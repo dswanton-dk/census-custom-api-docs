@@ -54,7 +54,7 @@ server.list_fields = ({ object }) => {
         createable: true,
         updateable: true,
         type: "string",
-        required: true,
+        required: false,
         array: false,
       },
     ],
@@ -76,7 +76,7 @@ server.sync_batch = ({ sync_plan, records }) => {
     record_results: records.map((record, index) => {
       success = [true, false][index % 2];
       return {
-        identifier: record.email,
+        identifier: record.id,
         success,
         error_message: success ? null : "oops!",
       };
