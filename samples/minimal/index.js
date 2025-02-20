@@ -40,7 +40,7 @@ server.list_fields = ({ object }) => {
       {
         field_api_name: "email",
         label: "Email",
-        identifier: true,
+        identifier: false,
         createable: true,
         updateable: true,
         type: "string",
@@ -76,7 +76,7 @@ server.sync_batch = ({ sync_plan, records }) => {
     record_results: records.map((record, index) => {
       success = [true, false][index % 2];
       return {
-        identifier: record.id,
+        identifier: record.id.toString(),
         success,
         error_message: success ? null : "oops!",
       };
