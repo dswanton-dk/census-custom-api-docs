@@ -38,7 +38,7 @@ server.list_fields = ({ object }) => {
       {
         field_api_name: "email",
         label: "Email",
-        identifier: false,
+        identifier: true,
         createable: true,
         updateable: true,
         type: "string",
