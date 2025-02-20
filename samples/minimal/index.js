@@ -19,7 +19,7 @@ server.list_objects = () => {
 // TODO can I use delete here for mirror ?
 server.supported_operations = ({ object }) => {
   console.log("listing operations for object", object);
-  return { operations: ["upsert"] };
+  return { operations: ["upsert","delete"] };
 };
 
 server.list_fields = ({ object }) => {
