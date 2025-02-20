@@ -55,6 +55,16 @@ server.list_fields = ({ object }) => {
         required: false,
         array: false,
       },
+      {
+        field_api_name: "segmentMembershipIds",
+        label: "SegmentMembershipIds",
+        identifier: false,
+        createable: true,
+        updateable: true,
+        type: "string",
+        required: false,
+        array: true,
+      },
     ],
   };
 };
