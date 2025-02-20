@@ -11,7 +11,6 @@ server.list_objects = () => {
   return {
     objects: [
       { object_api_name: "user", label: "Users" },
-      { object_api_name: "event", label: "Events", can_create_fields: 'on_write' },
     ],
   };
 };
