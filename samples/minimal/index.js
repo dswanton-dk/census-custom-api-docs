@@ -26,16 +26,6 @@ server.list_fields = ({ object }) => {
   return {
     fields: [
       {
-        field_api_name: "id",
-        label: "Id",
-        identifier: true,
-        createable: true,
-        updateable: false,
-        type: "string",
-        required: false,
-        array: false,
-      },      
-      {
         field_api_name: "email",
         label: "Email",
         identifier: true,
