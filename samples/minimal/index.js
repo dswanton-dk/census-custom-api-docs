@@ -75,7 +75,7 @@ server.sync_batch = ({ sync_plan, records }) => {
     record_results: records.map((record, index) => {
       success = [true, false][index % 2];
       return {
-        identifier: record.id.toString(),
+        identifier: record.id,
         success,
         error_message: success ? null : "oops!",
       };
