@@ -32,7 +32,7 @@ server.list_fields = ({ object }) => {
         identifier: true,
         createable: true,
         updateable: false,
-        type: "integer",
+        type: "string",
         required: true,
         array: false,
       },      
@@ -75,7 +75,7 @@ server.sync_batch = ({ sync_plan, records }) => {
     record_results: records.map((record, index) => {
       success = [true, false][index % 2];
       return {
-        identifier: record.id,
+        identifier: record.id.toString(),
         success,
         error_message: success ? null : "oops!",
       };
