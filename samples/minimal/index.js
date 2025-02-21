@@ -32,7 +32,7 @@ server.list_fields = ({ object }) => {
         createable: true,
         updateable: false,
         type: "string",
-        required: true,
+        required: false,
         array: false,
       },      
       {
