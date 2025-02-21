@@ -65,6 +65,16 @@ server.list_fields = ({ object }) => {
         required: false,
         array: true,
       },
+      {
+        field_api_name: "segmentUrl",
+        label: "segmentUrl",
+        identifier: false,
+        createable: true,
+        updateable: true,
+        type: "string",
+        required: false,
+        array: false,
+      },
     ],
   };
 };
