@@ -45,26 +45,6 @@ server.list_fields = ({ object }) => {
         array: false,
       },
       {
-        field_api_name: "segmentMembershipIntegers",
-        label: "SegmentMembershipIntegers",
-        identifier: false,
-        createable: true,
-        updateable: true,
-        type: "integer",
-        required: false,
-        array: true,
-      },
-      {
-        field_api_name: "segmentMembershipStrings",
-        label: "SegmentMembershipStringn",
-        identifier: false,
-        createable: true,
-        updateable: true,
-        type: "strings",
-        required: false,
-        array: true,
-      },
-      {
         field_api_name: "segmentUrl",
         label: "Segment Url",
         identifier: false,
@@ -73,7 +53,7 @@ server.list_fields = ({ object }) => {
         type: "strings",
         required: false,
         array: false,
-      },
+      }
     ],
   };
 };
