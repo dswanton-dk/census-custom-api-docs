@@ -10,15 +10,15 @@ server.test_connection = () => {
 server.list_objects = () => {
   return {
     objects: [
-      { object_api_name: "customer", label: "Customers" },
-      { object_api_name: "event", label: "Events", can_create_fields: 'on_write' },
+      { object_api_name: "user", label: "Users" },
     ],
   };
 };
 
+// TODO can I use delete here for mirror ?
 server.supported_operations = ({ object }) => {
   console.log("listing operations for object", object);
-  return { operations: ["upsert"] };
+  return { operations: ["upsert","delete"] };
 };
 
 server.list_fields = ({ object }) => {
@@ -26,13 +26,23 @@ server.list_fields = ({ object }) => {
   return {
     fields: [
       {
+        field_api_name: "id",
+        label: "Id",
+        identifier: true,
+        createable: true,
+        updateable: false,
+        type: "string",
+        required: true,
+        array: false,
+      },      
+      {
         field_api_name: "email",
         label: "Email",
         identifier: true,
         createable: true,
         updateable: true,
         type: "string",
-        required: true,
+        required: false,
         array: false,
       },
       {
@@ -42,8 +52,18 @@ server.list_fields = ({ object }) => {
         createable: true,
         updateable: true,
         type: "string",
-        required: true,
+        required: false,
         array: false,
+      },
+      {
+        field_api_name: "segmentMembershipIds",
+        label: "SegmentMembershipIds",
+        identifier: false,
+        createable: true,
+        updateable: true,
+        type: "string",
+        required: false,
+        array: true,
       },
     ],
   };
