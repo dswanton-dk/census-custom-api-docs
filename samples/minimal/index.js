@@ -15,6 +15,7 @@ server.list_objects = () => {
   };
 };
 
+// TODO can I use delete here for mirror ?
 server.supported_operations = ({ object }) => {
   console.log("listing operations for object", object);
   return { operations: ["upsert","delete"] };
@@ -24,6 +25,16 @@ server.list_fields = ({ object }) => {
   console.log("listing fields for object", object);
   return {
     fields: [
+      {
+        field_api_name: "id",
+        label: "Id",
+        identifier: true,
+        createable: true,
+        updateable: false,
+        type: "string",
+        required: true,
+        array: false,
+      },      
       {
         field_api_name: "email",
         label: "Email",
@@ -45,15 +56,15 @@ server.list_fields = ({ object }) => {
         array: false,
       },
       {
-        field_api_name: "segmentUrl",
-        label: "Segment Url",
+        field_api_name: "segmentMembershipIds",
+        label: "SegmentMembershipIds",
         identifier: false,
         createable: true,
         updateable: true,
-        type: "strings",
+        type: "string",
         required: false,
-        array: false,
-      }
+        array: true,
+      },
     ],
   };
 };
